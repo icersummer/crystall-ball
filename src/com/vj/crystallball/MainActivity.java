@@ -19,6 +19,9 @@ public class MainActivity extends Activity {
 		setContentView(R.layout.activity_main);
 		
 		// get instance by ID
+		System.out.println("1-- " + (findViewById(R.id.button1) instanceof Button));
+		System.out.println("3-- " + (findViewById(R.id.button1) instanceof TextView));
+		System.out.println("2-- " + (findViewById(R.id.textView1) instanceof TextView));
 		mButton = (Button) findViewById(R.id.button1);
 		mTextView = (TextView) findViewById(R.id.textView1);
 		
@@ -27,7 +30,7 @@ public class MainActivity extends Activity {
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
-				String answer = "Yes";
+				String answer = "神奇的水晶球变化";
 				mTextView.setText(answer);
 			}
 		});
