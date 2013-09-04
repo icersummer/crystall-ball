@@ -1,15 +1,25 @@
 package com.vj.crystallball;
 
-import android.os.Bundle;
 import android.app.Activity;
+import android.os.Bundle;
 import android.view.Menu;
+import android.widget.Button;
+import android.widget.TextView;
 
 public class MainActivity extends Activity {
 
+	// 
+	Button mButton;
+	TextView mTextView;
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
+		
+		// get instance by ID
+		mButton = (Button) findViewById(R.id.button1);
+		mTextView = (TextView) findViewById(R.id.textView1);
 	}
 
 	@Override
