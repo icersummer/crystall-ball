@@ -102,3 +102,11 @@ Debug Android App in Eclipse
 5- 通过layout为第二Activity创建UI界面
 
 6- 通过Intent的startActivity实现了Activity之间的跳转
+
+Activity生命周期
+----------------
+1- Activity的生命周期是指从启动到销毁的过程
+
+2- 对应的方法是onCreate和onDestroy这两个方法
+
+3- 当发生界面切换时会涉及两对方法，为别为onResume/onPause和onStart/onStop
