@@ -22,8 +22,31 @@ Android高级控件
 
 4- 在所有屏幕（不同分辨率）下预览显示效果
 
-文字添加动画效果
+图片添加动画效果
+-----------------
 
+1- 在资源目录res下创建anim文件夹，该目录用于保存Android XML文件
+
+2- 在动画文件zoomin.xml设置坐标、动画时长等信息
+
+3- 在源代码中创建ImageView和Animation对象引用
+
+4- 通过AnimationUtil的loadAnimation方法获取Animation对象
+
+5- 在onClick事件中通过ImageView对象引用启动动画效果
+
+文字添加动画效果
+-----------------
+
+1- 在res/anim目录下创建fadein.xml文件，Root Element选择alpha
+
+2- 将fromAlpha设置为0（全透明），toAlpha设置为1（不透明）
+
+3- 将动画时长duration设置为2000毫秒
+
+4- 声明一个Animation对象引用，并通过loadAnimation加载fadein资源文件
+
+5- 在onClick事件中调用TextView的startAnimation方法
 
 音频介绍
 --------
