@@ -1,6 +1,8 @@
 package com.vj.crystallball;
 
 import android.app.Activity;
+import android.media.AudioManager;
+import android.media.SoundPool;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
@@ -18,6 +20,8 @@ public class MainActivity extends Activity {
 	ImageView mImageView;
 	Animation mAnimation;
 	Animation mFadein;
+	SoundPool mSoundPool;
+	int click;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +38,9 @@ public class MainActivity extends Activity {
 		mImageView = (ImageView) findViewById(R.id.imageView1);
 		mAnimation = AnimationUtils.loadAnimation(this, R.anim.zoomin);
 		mFadein = AnimationUtils.loadAnimation(this, R.anim.fadein);
+		// SOUND POOL MUST INITIAL IN ADVANCE, LIKE HERE
+		mSoundPool = new SoundPool(1, AudioManager.STREAM_MUSIC, 0);
+		click = mSoundPool.load(this, R.raw.click, 1);
 		
 		mButton.setOnClickListener(new View.OnClickListener() {
 			
@@ -43,8 +50,13 @@ public class MainActivity extends Activity {
 				mTextView.setText(answer);
 				mTextView.startAnimation(mFadein);
 				mImageView.startAnimation(mAnimation);
+				playSound();
 			}
 		});
+	}
+	
+	private void playSound(){
+		mSoundPool.play(click, 1, 1, 0, 0, 1);
 	}
 
 	@Override
