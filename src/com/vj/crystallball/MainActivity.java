@@ -7,6 +7,7 @@ import android.content.DialogInterface.OnClickListener;
 import android.media.AudioManager;
 import android.media.SoundPool;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.Menu;
 import android.view.View;
@@ -19,6 +20,7 @@ import android.widget.Toast;
 
 public class MainActivity extends Activity {
 
+	private static final String TAG = "MainActivity";
 	// 
 	Button mButton;
 	TextView mTextView;
@@ -32,6 +34,7 @@ public class MainActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
+		testLogLevel();
 		
 		// get instance by ID
 //		System.out.println("1-- " + (findViewById(R.id.button1) instanceof Button));
@@ -51,6 +54,7 @@ public class MainActivity extends Activity {
 			
 			@Override
 			public void onClick(View v) {
+				Log.v(TAG, "mButton.setOnClickListener onClick");
 				String answer = "神奇的水晶球变化";
 				mTextView.setText(answer);
 				mTextView.startAnimation(mFadein);
@@ -61,6 +65,14 @@ public class MainActivity extends Activity {
 		});
 	}
 	
+	private void testLogLevel() {
+		Log.v(TAG, "MainActivity Created.");//verbose
+		Log.d(TAG, "MainActivity Created.");//debug
+		Log.i(TAG, "MainActivity Created.");//info
+		Log.w(TAG, "MainActivity Created.");//warning
+		Log.e(TAG, "MainActivity Created.");//error
+	}
+
 	// 显示带有-确定、取消-的按钮
 	private void showDialog(){
 		AlertDialog.Builder mBuilder = new AlertDialog.Builder(this);
