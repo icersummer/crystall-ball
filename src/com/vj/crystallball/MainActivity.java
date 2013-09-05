@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.DialogInterface.OnClickListener;
+import android.content.Intent;
 import android.media.AudioManager;
 import android.media.SoundPool;
 import android.os.Bundle;
@@ -60,9 +61,15 @@ public class MainActivity extends Activity {
 				mTextView.startAnimation(mFadein);
 				mImageView.startAnimation(mAnimation);
 				playSound();
-				toast("这是一个Toast提示。");
+				toast("跳转成功->");
+				startAnotherActivity();
 			}
 		});
+	}
+	
+	private void startAnotherActivity(){
+		Intent intent = new Intent(this, SecondActivity.class);
+		startActivity(intent);
 	}
 	
 	private void testLogLevel() {

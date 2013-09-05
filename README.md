@@ -78,3 +78,27 @@ Toast信息
 3- 将提示信息设置为”这是一个Toast提示“并传给已创建的toast方法
 
 4- 通过Toast对象的setGravity设置显示的坐标
+
+Debug Android App in Eclipse
+----------------------------
+1- 断点调试
+
+2- 异常捕捉
+
+3- LogCat中会显示ERROR信息，此处为ClassCastException
+
+4- 在LogCat中双击错误行可以直接高亮显示出错误的代码片段
+
+四大组件及Intent
+----------------
+1- Android的四个主要组件：Activity、Service、Broadcast Receiver和Content Provider
+
+2- 组件之间的数据传递靠Intent来实现
+
+3- 课程中我们通过Intent实现两个Activity之间的跳转
+
+4- 在ApplicationManifest.xml中添加第二个Activity的定义
+
+5- 通过layout为第二Activity创建UI界面
+
+6- 通过Intent的startActivity实现了Activity之间的跳转
