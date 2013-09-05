@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.media.AudioManager;
 import android.media.SoundPool;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.Menu;
 import android.view.View;
 import android.view.animation.Animation;
@@ -11,6 +12,7 @@ import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends Activity {
 
@@ -51,8 +53,15 @@ public class MainActivity extends Activity {
 				mTextView.startAnimation(mFadein);
 				mImageView.startAnimation(mAnimation);
 				playSound();
+				toast("这是一个Toast提示。");
 			}
 		});
+	}
+	
+	private void toast(String content) {
+		Toast mToast = Toast.makeText(this, content, Toast.LENGTH_LONG);
+		mToast.setGravity(Gravity.CENTER, 0, 0);
+		mToast.show();
 	}
 	
 	private void playSound(){
