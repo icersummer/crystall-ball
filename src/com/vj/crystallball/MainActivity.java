@@ -1,6 +1,9 @@
 package com.vj.crystallball;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.content.DialogInterface.OnClickListener;
 import android.media.AudioManager;
 import android.media.SoundPool;
 import android.os.Bundle;
@@ -58,6 +61,33 @@ public class MainActivity extends Activity {
 		});
 	}
 	
+	// 显示带有-确定、取消-的按钮
+	private void showDialog(){
+		AlertDialog.Builder mBuilder = new AlertDialog.Builder(this);
+		mBuilder.setTitle("温馨提示");
+		mBuilder.setMessage("确定退出？");
+		mBuilder.setPositiveButton("确定", new OnClickListener(){
+			@Override
+			public void onClick(DialogInterface dialog, int which) {
+				dialog.dismiss();
+				MainActivity.this.finish();
+			}			
+		});
+		mBuilder.setNegativeButton("取消", new OnClickListener(){
+			@Override
+			public void onClick(DialogInterface dialog, int which) {
+				dialog.dismiss();
+			}			
+		});
+		mBuilder.create().show();
+	}
+	
+	@Override
+	public void onBackPressed() {
+//		super.onBackPressed();
+		showDialog();
+	}
+
 	private void toast(String content) {
 		Toast mToast = Toast.makeText(this, content, Toast.LENGTH_LONG);
 		mToast.setGravity(Gravity.CENTER, 0, 0);
