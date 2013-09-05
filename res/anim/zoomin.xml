@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 尺寸伸缩动画 -->
+<scale
+    android:fromXScale="0"
+    android:toXScale="1"
+    android:fromYScale="0"
+    android:toYScale="1"
+    android:pivotX="50%"
+    android:pivotY="50%"
+    android:duration="2000"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    
+<!-- 说明
+	X轴尺寸：完全没有
+	X轴尺寸：放大
+	Y轴尺寸：完全没有
+	Y轴尺寸：放大
+	X轴动画起点：X轴正中间
+	Y轴动画起点：Y轴正中间
+	持续时间：2s
+ -->
+    
+</scale>
