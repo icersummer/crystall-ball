@@ -17,6 +17,7 @@ public class MainActivity extends Activity {
 	TextView mTextView;
 	ImageView mImageView;
 	Animation mAnimation;
+	Animation mFadein;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +33,7 @@ public class MainActivity extends Activity {
 		mTextView = (TextView) findViewById(R.id.textView1);
 		mImageView = (ImageView) findViewById(R.id.imageView1);
 		mAnimation = AnimationUtils.loadAnimation(this, R.anim.zoomin);
+		mFadein = AnimationUtils.loadAnimation(this, R.anim.fadein);
 		
 		mButton.setOnClickListener(new View.OnClickListener() {
 			
@@ -39,6 +41,7 @@ public class MainActivity extends Activity {
 			public void onClick(View v) {
 				String answer = "神奇的水晶球变化";
 				mTextView.setText(answer);
+				mTextView.startAnimation(mFadein);
 				mImageView.startAnimation(mAnimation);
 			}
 		});
