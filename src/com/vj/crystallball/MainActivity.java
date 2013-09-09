@@ -22,7 +22,7 @@ import android.widget.Toast;
 public class MainActivity extends Activity {
 
 	private static final String TAG = "MainActivity";
-	// 
+	//   
 	Button mButton;
 	TextView mTextView;
 	ImageView mImageView;
